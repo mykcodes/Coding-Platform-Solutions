@@ -1,0 +1,13 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+	int A;
+	cin>>A;
+	A<=60
+	? cout << "Yes"
+	: cout << "No";
+	return 0;
+	
+
+}
