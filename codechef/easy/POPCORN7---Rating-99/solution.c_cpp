@@ -1,0 +1,11 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+	int X;
+	cin>>X;
+	int A=X-100;
+	cout<<A/50;
+	return 0;
+
+}
