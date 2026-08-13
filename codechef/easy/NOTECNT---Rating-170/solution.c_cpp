@@ -1,0 +1,10 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+    int A,B,total;
+    cin>>A>>B;
+    total=(100*B)*A;
+    cout<<total;
+    return 0;
+}
