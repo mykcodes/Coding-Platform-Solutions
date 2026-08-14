@@ -1,0 +1,14 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+	int R,B,P,Q,X,Y;
+	cin>>R>>B>>P>>Q;
+	X=R*P;
+	Y=B*Q;
+	(X>Y)
+	? cout <<X
+	: cout <<Y;
+	return 0;
+
+}
