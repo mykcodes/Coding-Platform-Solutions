@@ -1,0 +1,14 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+	int D,T;
+	cin>>D>>T;
+	if (T>=D) {
+	    cout<<"0";
+	} else {
+	    cout<<D-T;
+	}
+	return 0;
+
+}
