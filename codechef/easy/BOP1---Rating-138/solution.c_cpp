@@ -1,0 +1,15 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+	int X,Y;
+	cin>>X>>Y;
+	if (X>Y) {
+	    cout<<"Alice";
+	} else if (Y>X) {
+	    cout<<"Bob";
+	} else {
+	    cout<<"Draw";
+	}
+	return 0;
+}
