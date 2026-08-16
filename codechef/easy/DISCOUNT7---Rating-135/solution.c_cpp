@@ -1,0 +1,15 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+	int N;
+	cin>>N;
+	if (N>=5) {
+	    cout<<((N*100)-(15*N));
+	}
+	else {
+	    cout<<N*100;
+	}
+	return 0;
+
+}
