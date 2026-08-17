@@ -1,0 +1,9 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+	 int N;
+	 cin>>N;
+	 cout<<(600-(N*30))/30;
+	 return 0;
+}
