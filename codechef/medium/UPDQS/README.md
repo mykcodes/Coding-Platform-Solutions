@@ -69,15 +69,86 @@ Output
 **Language:** c_cpp  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-08-19T14:46:35.801Z  
+**Submitted:** 2026-08-19T14:46:56.115Z  
 
 ```c_cpp
-#include <bits/stdc++.h>
+#include <iostream>
+#include <vector>
+#include <set>
+#include <numeric>
+#include <algorithm>
+
 using namespace std;
 
-int main() {
-	// your code goes here
+void solve() {
+    int n, q;
+    cin >> n >> q;
+    
+    vector<long long> a(n + 1);
+    for (int i = 1; i <= n; ++i) {
+        cin >> a[i];
+    }
+    
+    // multiset to keep the difference array sorted
+    multiset<long long> diffs;
+    for (int i = 1; i < n; ++i) {
+        diffs.insert(a[i + 1] - a[i]);
+    }
+    
+    // Lambda to calculate the optimal sum based on current differences
+    auto get_min_sum = [&](long long first_element) {
+        long long total_sum = n * first_element;
+        long long weight = 1;
+        // Elements in multiset are sorted in ascending order.
+        // To pair largest weights with smallest elements, we iterate naturally.
+        for (long long d : diffs) {
+            total_sum += weight * d;
+            weight++;
+        }
+        return total_sum;
+    };
+    
+    // Process queries
+    while (q--) {
+        int idx;
+        long long x;
+        cin >> idx >> x;
+        
+        // Remove the differences affected by changing a[idx]
+        if (idx > 1) {
+            diffs.erase(diffs.find(a[idx] - a[idx - 1]));
+        }
+        if (idx < n) {
+            diffs.erase(diffs.find(a[idx + 1] - a[idx]));
+        }
+        
+        // Apply permanent update
+        a[idx] = x;
+        
+        // Re-insert new differences
+        if (idx > 1) {
+            diffs.insert(a[idx] - a[idx - 1]);
+        }
+        if (idx < n) {
+            diffs.insert(a[idx + 1] - a[idx]);
+        }
+        
+        cout << get_min_sum(a[1]) << "\n";
+    }
+}
 
+int main() {
+    // Optimize standard I/O operations
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+    
+    int t;
+    cin >> t;
+    while (t--) {
+        solve();
+    }
+    
+    return 0;
 }
 
 ```
