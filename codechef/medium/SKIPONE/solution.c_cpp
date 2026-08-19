@@ -1,7 +1,53 @@
-#include <bits/stdc++.h>
+#include <iostream>
+#include <vector>
+#include <algorithm>
+
 using namespace std;
 
-int main() {
-	// your code goes here
+void solve() {
+    int n;
+    long long k;
+    // Assuming the first line contains both N and K as K is required
+    cin >> n >> k;
+    
+    vector<long long> a(n);
+    for (int i = 0; i < n; ++i) {
+        cin >> a[i];
+    }
+    
+    long long current_sum = 0;
+    long long max_element = 0;
+    int max_items = 0;
+    
+    for (int i = 0; i < n; ++i) {
+        current_sum += a[i];
+        max_element = max(max_element, a[i]);
+        
+        // Effective cost after using the coupon on the most expensive item so far
+        long long effective_cost = current_sum - max_element;
+        
+        if (effective_cost <= k) {
+            max_items = i + 1;
+        } else {
+            // Since costs are non-negative, if we can't afford the prefix up to 'i',
+            // we won't be able to afford any longer prefixes either.
+            break;
+        }
+    }
+    
+    cout << max_items << "\n";
+}
 
+int main() {
+    // Optimize standard I/O operations for performance
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+    
+    int t;
+    cin >> t;
+    while (t--) {
+        solve();
+    }
+    
+    return 0;
 }
