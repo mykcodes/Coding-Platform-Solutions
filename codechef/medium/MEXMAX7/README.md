@@ -61,15 +61,81 @@ Output
 **Language:** c_cpp  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-08-19T14:44:47.814Z  
+**Submitted:** 2026-08-19T14:45:23.815Z  
 
 ```c_cpp
-#include <bits/stdc++.h>
+#include <iostream>
+#include <vector>
+#include <algorithm>
+
 using namespace std;
 
-int main() {
-	// your code goes here
+const int MOD = 998244353;
 
+void solve() {
+    int n;
+    cin >> n;
+    
+    // We only care about frequencies of elements up to n + 2
+    vector<int> freq(n + 3, 0);
+    for (int i = 0; i < n; ++i) {
+        long long val;
+        cin >> val;
+        if (val <= n + 2) {
+            freq[val]++;
+        }
+    }
+    
+    // Precompute powers of 2 modulo 998244353
+    vector<long long> pow2(n + 1);
+    pow2[0] = 1;
+    for (int i = 1; i <= n; ++i) {
+        pow2[i] = (pow2[i - 1] * 2) % MOD;
+    }
+    
+    long long ans = 0;
+    
+    // --- Count Type 1 Subsequences ---
+    long long prod = 1;
+    for (int v = 0; v <= n + 1; ++v) {
+        long long choices = (pow2[freq[v]] - 1 + MOD) % MOD;
+        prod = (prod * choices) % MOD;
+        ans = (ans + prod) % MOD;
+        if (prod == 0) {
+            break; // If a required element is missing, further extensions are impossible
+        }
+    }
+    
+    // --- Count Type 2 Subsequences ---
+    prod = 1;
+    for (int v = 0; v <= n + 1; ++v) {
+        long long choices_v_plus_1 = (pow2[freq[v + 1]] - 1 + MOD) % MOD;
+        long long current_ways = (prod * choices_v_plus_1) % MOD;
+        ans = (ans + current_ways) % MOD;
+        
+        // Update product for the next iteration (prefix 0 to v must be chosen)
+        long long choices_v = (pow2[freq[v]] - 1 + MOD) % MOD;
+        prod = (prod * choices_v) % MOD;
+        if (prod == 0) {
+            break;
+        }
+    }
+    
+    cout << ans << "\n";
+}
+
+int main() {
+    // Optimize standard I/O operations for competitive programming
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+    
+    int t;
+    cin >> t;
+    while (t--) {
+        solve();
+    }
+    
+    return 0;
 }
 
 ```
