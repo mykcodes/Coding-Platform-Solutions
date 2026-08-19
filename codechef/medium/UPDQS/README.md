@@ -69,7 +69,7 @@ Output
 **Language:** c_cpp  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-08-19T14:49:27.519Z  
+**Submitted:** 2026-08-19T14:49:29.534Z  
 
 ```c_cpp
 #include <iostream>
@@ -94,7 +94,7 @@ class SegmentTree {
         if (start == end) {
             tree[node].count += delta;
             tree[node].sum += delta * values[start];
-            // Corrected formula for duplicates taking consecutive arithmetic weights inside a leaf
+            // Uses consecutive arithmetic weights inside a leaf for duplicates
             tree[node].weighted_sum = values[start] * (tree[node].count * (tree[node].count + 1) / 2);
             return;
         }
@@ -128,7 +128,8 @@ public:
 
     long long get_weighted_sum() {
         if (size == 0) return 0;
-        return tree.weighted_sum;
+        // FIXED: Accessing the root node of the tree array instead of the vector container
+        return tree[1].weighted_sum;
     }
 };
 
@@ -204,7 +205,7 @@ void solve() {
             st.modify(get_compressed_idx(diff_at[idx]), 1);
         }
 
-        // Compute minimal sum: N * A[1] + Segment Tree Weighted Sum
+        // FIXED: The base is explicitly the first element of the tracking array 'a[1]'
         long long ans = n * a[1] + st.get_weighted_sum();
         cout << ans << "\n";
     }
