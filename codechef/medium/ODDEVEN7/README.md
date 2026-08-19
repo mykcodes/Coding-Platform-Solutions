@@ -54,15 +54,55 @@ Output
 **Language:** c_cpp  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-08-19T14:42:46.792Z  
+**Submitted:** 2026-08-19T14:43:34.834Z  
 
 ```c_cpp
-#include <bits/stdc++.h>
+#include <iostream>
+#include <vector>
+#include <algorithm>
+
 using namespace std;
 
-int main() {
-	// your code goes here
+void solve() {
+    int n;
+    cin >> n;
+    
+    int odds = 0;
+    int evens = 0;
+    
+    for (int i = 0; i < n; ++i) {
+        long long val;
+        cin >> val;
+        if (val % 2 != 0) {
+            odds++;
+        } else {
+            evens++;
+        }
+    }
+    
+    // If counts are equal, we can use all elements
+    if (odds == evens) {
+        cout << odds + evens << "\n";
+    } 
+    // Otherwise, we are limited by the smaller count + 1
+    else {
+        int min_count = min(odds, evens);
+        cout << (2 * min_count) + 1 << "\n";
+    }
+}
 
+int main() {
+    // Optimize standard I/O operations for performance
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+    
+    int t;
+    cin >> t;
+    while (t--) {
+        solve();
+    }
+    
+    return 0;
 }
 
 ```
