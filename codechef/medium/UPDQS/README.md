@@ -69,85 +69,158 @@ Output
 **Language:** c_cpp  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-08-19T14:47:15.797Z  
+**Submitted:** 2026-08-19T14:49:27.519Z  
 
 ```c_cpp
 #include <iostream>
 #include <vector>
-#include <set>
-#include <numeric>
 #include <algorithm>
 
 using namespace std;
 
+// Segment Tree Node
+struct Node {
+    long long count = 0;
+    long long sum = 0;
+    long long weighted_sum = 0;
+};
+
+class SegmentTree {
+    int size;
+    vector<Node> tree;
+    vector<long long> values;
+
+    void update(int node, int start, int end, int idx, int delta) {
+        if (start == end) {
+            tree[node].count += delta;
+            tree[node].sum += delta * values[start];
+            // Corrected formula for duplicates taking consecutive arithmetic weights inside a leaf
+            tree[node].weighted_sum = values[start] * (tree[node].count * (tree[node].count + 1) / 2);
+            return;
+        }
+        int mid = start + (end - start) / 2;
+        if (idx <= mid) {
+            update(2 * node, start, mid, idx, delta);
+        } else {
+            update(2 * node + 1, mid + 1, end, idx, delta);
+        }
+        // Merge logic: right child elements are shifted by left child count positions
+        tree[node].count = tree[2 * node].count + tree[2 * node + 1].count;
+        tree[node].sum = tree[2 * node].sum + tree[2 * node + 1].sum;
+        tree[node].weighted_sum = tree[2 * node].weighted_sum + 
+                                  tree[2 * node + 1].weighted_sum + 
+                                  tree[2 * node].count * tree[2 * node + 1].sum;
+    }
+
+public:
+    SegmentTree(const vector<long long>& compressed_vals) {
+        values = compressed_vals;
+        size = values.size();
+        if (size > 0) {
+            tree.resize(4 * size);
+        }
+    }
+
+    void modify(int idx, int delta) {
+        if (size == 0) return;
+        update(1, 0, size - 1, idx, delta);
+    }
+
+    long long get_weighted_sum() {
+        if (size == 0) return 0;
+        return tree.weighted_sum;
+    }
+};
+
 void solve() {
     int n, q;
     cin >> n >> q;
-    
+
     vector<long long> a(n + 1);
     for (int i = 1; i <= n; ++i) {
         cin >> a[i];
     }
-    
-    // multiset to keep the difference array sorted
-    multiset<long long> diffs;
-    for (int i = 1; i < n; ++i) {
-        diffs.insert(a[i + 1] - a[i]);
+
+    vector<pair<int, long long>> queries(q);
+    for (int i = 0; i < q; ++i) {
+        cin >> queries[i].first >> queries[i].second;
     }
-    
-    // Lambda to calculate the optimal sum based on current differences
-    auto get_min_sum = [&](long long first_element) {
-        long long total_sum = n * first_element;
-        long long weight = 1;
-        // Elements in multiset are sorted in ascending order.
-        // To pair largest weights with smallest elements, we iterate naturally.
-        for (long long d : diffs) {
-            total_sum += weight * d;
-            weight++;
-        }
-        return total_sum;
+
+    // Offline simulation to gather all possible differences for coordinate compression
+    vector<long long> all_diffs;
+    for (int i = 1; i < n; ++i) {
+        all_diffs.push_back(a[i + 1] - a[i]);
+    }
+
+    vector<long long> temp_a = a;
+    for (int i = 0; i < q; ++i) {
+        int idx = queries[i].first;
+        long long x = queries[i].second;
+        temp_a[idx] = x;
+        if (idx > 1) all_diffs.push_back(temp_a[idx] - temp_a[idx - 1]);
+        if (idx < n) all_diffs.push_back(temp_a[idx + 1] - temp_a[idx]);
+    }
+
+    // Sort in descending order to match Rearrangement Inequality requirements
+    sort(all_diffs.begin(), all_diffs.end(), greater<long long>());
+    all_diffs.erase(unique(all_diffs.begin(), all_diffs.end()), all_diffs.end());
+
+    auto get_compressed_idx = [&](long long val) {
+        return lower_bound(all_diffs.begin(), all_diffs.end(), val, greater<long long>()) - all_diffs.begin();
     };
-    
-    // Process queries
-    while (q--) {
-        int idx;
-        long long x;
-        cin >> idx >> x;
-        
-        // Remove the differences affected by changing a[idx]
+
+    SegmentTree st(all_diffs);
+    vector<long long> diff_at(n + 1, 0);
+
+    // Populate Segment Tree with the initial state
+    for (int i = 1; i < n; ++i) {
+        diff_at[i] = a[i + 1] - a[i];
+        st.modify(get_compressed_idx(diff_at[i]), 1);
+    }
+
+    // Process all live queries
+    for (int i = 0; i < q; ++i) {
+        int idx = queries[i].first;
+        long long x = queries[i].second;
+
+        // Remove old difference mappings
         if (idx > 1) {
-            diffs.erase(diffs.find(a[idx] - a[idx - 1]));
+            st.modify(get_compressed_idx(diff_at[idx - 1]), -1);
         }
         if (idx < n) {
-            diffs.erase(diffs.find(a[idx + 1] - a[idx]));
+            st.modify(get_compressed_idx(diff_at[idx]), -1);
         }
-        
-        // Apply permanent update
+
+        // Apply mutation
         a[idx] = x;
-        
-        // Re-insert new differences
+
+        // Add brand new difference mappings
         if (idx > 1) {
-            diffs.insert(a[idx] - a[idx - 1]);
+            diff_at[idx - 1] = a[idx] - a[idx - 1];
+            st.modify(get_compressed_idx(diff_at[idx - 1]), 1);
         }
         if (idx < n) {
-            diffs.insert(a[idx + 1] - a[idx]);
+            diff_at[idx] = a[idx + 1] - a[idx];
+            st.modify(get_compressed_idx(diff_at[idx]), 1);
         }
-        
-        cout << get_min_sum(a[1]) << "\n";
+
+        // Compute minimal sum: N * A[1] + Segment Tree Weighted Sum
+        long long ans = n * a[1] + st.get_weighted_sum();
+        cout << ans << "\n";
     }
 }
 
 int main() {
-    // Optimize standard I/O operations
+    // Fast I/O
     ios_base::sync_with_stdio(false);
     cin.tie(NULL);
-    
+
     int t;
     cin >> t;
     while (t--) {
         solve();
     }
-    
+
     return 0;
 }
 
