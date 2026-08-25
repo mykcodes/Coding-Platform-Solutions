@@ -1,0 +1,10 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+    int N,K,R;
+    cin>>N>>K>>R;
+    cout<<(N-K)*R;
+    return 0;
+
+}
