@@ -1,0 +1,11 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+	int X;
+	cin>>X;
+	(X>11)
+	? cout << "Yes" : cout<< "No";
+	return 0;
+
+}
