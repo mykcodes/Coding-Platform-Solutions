@@ -75,19 +75,19 @@ The convincing power of prosecution is same as that of defense. Thus, the accuse
 
 ## Solution
 
-**Language:** C++  
+**Language:** c_cpp  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-09-01T14:25:14.884Z  
+**Submitted:** 2026-09-01T14:25:49.357Z  
 
-```cpp
+```c_cpp
 #include <bits/stdc++.h>
 using namespace std;
 
 int main() {
 	int X,Y;
 	cin>>X>>Y;
-	if (X>Y) {
+	if (X>=Y) {
 	    cout<<"Yes";
 	} else {
 	    cout<<"No";
