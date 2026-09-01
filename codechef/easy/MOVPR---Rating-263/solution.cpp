@@ -2,8 +2,15 @@
 using namespace std;
 
 int main() {
-    int X,Y,Z;
+    int X,Y,Z,A,B;
     cin>>X>>Y>>Z;
-    cout<<2*Z+Y;
+    A = 2*Z+Y;
+    B = 2*X+3*Y;
+    if (A>B) {
+        cout<<B;
+    } else {
+        cout<<A;
+    }
+    
     return 0;
 }
