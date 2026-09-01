@@ -64,16 +64,23 @@ It is optimal to buy all the $2$ popcorns and $3$ drinks individually for $2 \cd
 **Language:** C++  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-09-01T14:09:21.836Z  
+**Submitted:** 2026-09-01T14:12:52.584Z  
 
 ```cpp
 #include <bits/stdc++.h>
 using namespace std;
 
 int main() {
-    int X,Y,Z;
+    int X,Y,Z,A,B;
     cin>>X>>Y>>Z;
-    cout<<2*Z+Y;
+    A = 2*Z+Y;
+    B = 2*X+3*Y;
+    if (A>B) {
+        cout<<B;
+    } else {
+        cout<<A;
+    }
+    
     return 0;
 }
 
