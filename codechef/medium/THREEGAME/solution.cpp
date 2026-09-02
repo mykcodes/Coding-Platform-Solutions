@@ -7,7 +7,11 @@ int main() {
     while (t--) {
         long long N;
         cin>>N;
-        cout<<N+2 - (N%3) <<endl;
+        if (N%2 == 0) {
+            cout<<N+2<<endl;
+        } else {
+            cout<<N+1<<endl;
+        }
     }
     return 0;
 
