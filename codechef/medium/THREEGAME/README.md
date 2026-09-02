@@ -53,12 +53,12 @@ Output
 
 ## Solution
 
-**Language:** C++  
+**Language:** c_cpp  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-09-02T14:57:22.143Z  
+**Submitted:** 2026-09-02T14:55:31.141Z  
 
-```cpp
+```c_cpp
 #include <bits/stdc++.h>
 using namespace std;
 
