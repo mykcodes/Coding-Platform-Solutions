@@ -2,6 +2,13 @@
 using namespace std;
 
 int main() {
-	// your code goes here
+    int t;
+    cin>>t;
+    while (t--) {
+        long long N;
+        cin>>N;
+        cout<<N+2 - (N%3) <<endl;
+    }
+    return 0;
 
 }
