@@ -56,25 +56,14 @@ Output
 **Language:** c_cpp  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-09-02T14:55:23.717Z  
+**Submitted:** 2026-09-02T14:50:03.163Z  
 
 ```c_cpp
 #include <bits/stdc++.h>
 using namespace std;
 
 int main() {
-    int t;
-    cin>>t;
-    while (t--) {
-        long long N;
-        cin>>N;
-        if (N == 1) {
-            cout<<1<<endl;
-        } else {
-            cout<<N+2 - (N%2)<<endl;
-        }
-    }
-    return 0;
+	// your code goes here
 
 }
 
