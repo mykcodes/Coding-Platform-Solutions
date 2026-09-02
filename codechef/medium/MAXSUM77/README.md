@@ -48,12 +48,12 @@ Output
 
 ## Solution
 
-**Language:** c_cpp  
+**Language:** C++  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-09-02T14:49:02.480Z  
+**Submitted:** 2026-09-02T14:47:37.998Z  
 
-```c_cpp
+```cpp
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -70,16 +70,16 @@ int main() {
 	        total += x;
 	    }
 	    int len = N-K;
-	    long long sum = 0;
+	    long long window = 0;
 	    for (int i=0; i < len; i++) {
-	        sum += A[i];
+	        window += A[i];
 	    }
-	    long long maxSum = sum;
+	    long long minSum = window;
 	    for (int i =len; i<N; i++) {
-	        sum += A[i]-A[i-len];
-	        maxSum = max(maxSum, sum);
+	        window += A[i]-A[i-len];
+	        minSum - min(minSum, window);
 	    }
-	    cout<<maxSum<<'\n';
+	    cout<<total-minSum<<'\n';
 	}
 	return 0;
 
