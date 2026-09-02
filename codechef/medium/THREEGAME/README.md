@@ -53,12 +53,12 @@ Output
 
 ## Solution
 
-**Language:** c_cpp  
+**Language:** C++  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-09-02T14:52:49.147Z  
+**Submitted:** 2026-09-02T14:57:22.143Z  
 
-```c_cpp
+```cpp
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -68,7 +68,11 @@ int main() {
     while (t--) {
         long long N;
         cin>>N;
-        cout<<N+2 - (N%3) <<endl;
+        if (N == 1) {
+            cout<<1<<endl;
+        } else {
+            cout<<N+2 - (N%2)<<endl;
+        }
     }
     return 0;
 
