@@ -56,7 +56,7 @@ Output
 **Language:** C++  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-09-02T14:53:54.159Z  
+**Submitted:** 2026-09-02T14:55:18.789Z  
 
 ```cpp
 #include <bits/stdc++.h>
@@ -68,7 +68,11 @@ int main() {
     while (t--) {
         long long N;
         cin>>N;
-        cout<<N+2 - (N%3) <<endl;
+        if (N%2 == 0) {
+            cout<<N+2<<endl;
+        } else {
+            cout<<N+1<<endl;
+        }
     }
     return 0;
 
