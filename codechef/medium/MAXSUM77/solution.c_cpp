@@ -21,7 +21,7 @@ int main() {
 	    long long maxSum = sum;
 	    for (int i =len; i<N; i++) {
 	        sum += A[i]-A[i-len];
-	        maxSum - max(maxSum, sum);
+	        maxSum = max(maxSum, sum);
 	    }
 	    cout<<maxSum<<'\n';
 	}
