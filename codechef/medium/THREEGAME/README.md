@@ -56,7 +56,7 @@ Output
 **Language:** c_cpp  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-09-02T14:57:29.367Z  
+**Submitted:** 2026-09-02T14:59:07.362Z  
 
 ```c_cpp
 #include <bits/stdc++.h>
@@ -68,10 +68,11 @@ int main() {
     while (t--) {
         long long N;
         cin>>N;
-        while (N%3 != 1) {
-            N++;
+        if (N%2 == 0) {
+            cout<<3*N/2 +1 <<endl;
+        } else {
+            cout<<(3*N-1)/2 <<endl;
         }
-        cout<<N<<endl;
     }
     return 0;
 
