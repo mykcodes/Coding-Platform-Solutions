@@ -51,7 +51,7 @@ Output
 **Language:** c_cpp  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-09-02T14:45:32.155Z  
+**Submitted:** 2026-09-02T14:49:02.480Z  
 
 ```c_cpp
 #include <bits/stdc++.h>
@@ -70,16 +70,16 @@ int main() {
 	        total += x;
 	    }
 	    int len = N-K;
-	    long long window = 0;
+	    long long sum = 0;
 	    for (int i=0; i < len; i++) {
-	        window += A[i];
+	        sum += A[i];
 	    }
-	    long long minSum = window;
+	    long long maxSum = sum;
 	    for (int i =len; i<N; i++) {
-	        window += A[i]-A[i-len];
-	        minSum - min(minSum, window);
+	        sum += A[i]-A[i-len];
+	        maxSum = max(maxSum, sum);
 	    }
-	    cout<<total-minSum<<'\n';
+	    cout<<maxSum<<'\n';
 	}
 	return 0;
 
