@@ -53,17 +53,28 @@ Output
 
 ## Solution
 
-**Language:** c_cpp  
+**Language:** C++  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-09-02T14:50:03.163Z  
+**Submitted:** 2026-09-02T14:54:36.148Z  
 
-```c_cpp
+```cpp
 #include <bits/stdc++.h>
 using namespace std;
 
 int main() {
-	// your code goes here
+    int t;
+    cin>>t;
+    while (t--) {
+        long long N;
+        cin>>N;
+        if (N%2 == 0) {
+            cout<<N+2<<endl;
+        } else {
+            cout<<N+1<<endl;
+        }
+    }
+    return 0;
 
 }
 
