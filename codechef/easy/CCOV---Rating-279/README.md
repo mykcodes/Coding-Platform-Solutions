@@ -60,12 +60,12 @@ Since Alice's speed exceeds $40$, she will be fined.
 
 ## Solution
 
-**Language:** C++  
+**Language:** c_cpp  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-09-05T17:34:23.222Z  
+**Submitted:** 2026-09-05T17:44:23.192Z  
 
-```cpp
+```c_cpp
 #include <bits/stdc++.h>
 using namespace std;
 
