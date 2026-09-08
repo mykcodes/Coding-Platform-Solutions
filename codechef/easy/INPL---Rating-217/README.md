@@ -61,7 +61,7 @@ BOOM
 **Language:** c_cpp  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-09-08T17:46:26.852Z  
+**Submitted:** 2026-09-08T17:47:12.517Z  
 
 ```c_cpp
 #include <bits/stdc++.h>
