@@ -1,0 +1,33 @@
+#include <bits/stdc++.h>
+using namespace std;
+void solve() {
+    long long X, Y;
+    cin >> X >> Y;
+    for (int D = 1; ; ++D) {
+        bool possible = false;
+        long long sum_sq = 0;
+        for (int M = 1; M <= D; ++M) {
+            sum_sq += 1LL * M * M;
+            long long revenue = Y * sum_sq + 1LL * (D - M) * Y * M * M;
+            long long cost = 1LL * M * X;
+            if (revenue - cost > 0) {
+                possible = true;
+                break;
+            }
+        }
+        if (possible) {
+            cout << D << "\n";
+            return;
+        }
+    }
+}
+int main() {
+    cin.tie(NULL);
+    int T;
+    cin >> T;
+    while (T--) {
+        solve();
+    }
+    return 0;
+}
+
