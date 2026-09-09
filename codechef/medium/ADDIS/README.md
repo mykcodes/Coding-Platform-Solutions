@@ -77,15 +77,41 @@ It can be shown that this is optimal.
 **Language:** c_cpp  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-09-09T16:16:52.965Z  
+**Submitted:** 2026-09-09T16:26:49.618Z  
 
 ```c_cpp
 #include <bits/stdc++.h>
 using namespace std;
-
+void solve() {
+    int n;
+    cin>>n;
+    vector<int> a(n);
+    for (int i=0; i<n; ++i) {
+        cin>>a[i];
+    }
+    sort(a.begin(), a.end());
+    int max_freq = 0;
+    int current_freq = 0;
+    for (int i = 0; i<n; ++i) {
+        if (i == 0|| a[i] == a[i-1]) {
+            current_freq++;
+        } else {
+            max_freq = max(max_freq, current_freq);
+            current_freq=1;
+        }
+    }
+    max_freq = max(max_freq, current_freq);
+    int ans = (max_freq + 1) / 2;
+    cout<<ans<<"\n";
+}
 int main() {
-	// your code goes here
-
+	cin.tie(NULL);
+	int t;
+	cin>>t;
+	while (t--) {
+	    solve();
+	}
+    return 0;
 }
 
 ```
