@@ -74,14 +74,33 @@ So, no solution exists.
 **Language:** c_cpp  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-09-09T16:08:55.413Z  
+**Submitted:** 2026-09-09T16:16:21.119Z  
 
 ```c_cpp
 #include <bits/stdc++.h>
 using namespace std;
 
+void solve() {
+    int n;
+    cin>>n;
+    string a,b;
+    cin>>a>>b;
+    int aA = count(a.begin(), a.end(), 'a');
+    int bB = count(b.begin(), b.end(), 'b');
+    if (aA == bB) {
+        cout<<"Yes\n";
+    } else {
+        cout<<"No\n";
+    }
+}
 int main() {
-	// your code goes here
+	cin.tie(NULL);
+	int t;
+	cin>>t;
+	while (t--) {
+	    solve();
+	}
+	return 0;
 
 }
 
