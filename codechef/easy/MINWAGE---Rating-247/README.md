@@ -60,7 +60,7 @@ Chef's income is $11$ dollars per hour, which is not higher than the minimum wag
 **Language:** c_cpp  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-08-29T15:29:47.502Z  
+**Submitted:** 2026-09-10T17:25:53.233Z  
 
 ```c_cpp
 #include <bits/stdc++.h>
