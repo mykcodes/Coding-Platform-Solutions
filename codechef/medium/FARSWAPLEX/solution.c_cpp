@@ -1,0 +1,44 @@
+#include <bits/stdc++.h>
+using namespace std;
+void solve() {
+    int n;
+    cin>>n;
+    vector<int> p(n);
+    for (int i=0; i<n; i++) {
+        cin>>p[i];
+    }
+    vector<int> result;
+    vector<bool> visited(n, false);
+    for (int i=0; i<n; i++) {
+        int idx = -1;
+        vector<bool> blocked (n+2, false);
+        for (int j-0; j<n; j++) {
+            if (visited[j]) continue;
+            int val = p[j];
+            if (!blocked[val]) {
+                if (idx == -1 || p[j] < p[idx]) {
+                    idx = j;
+                }
+            }
+            if (val > 1) blocked[val - 1] = true;
+            if (val < n) blocked[val + 1] = true;
+        }
+        result.push_back(p[idx]);
+        visited[best_idx] = true
+    }
+    for (int i = 0; i < n; i++) {
+        cout << result[i] << (i == n - 1 ? "" : " ");
+    }
+    cout << "\n";
+}
+}
+int main() {
+	int t;
+    cin >> t;
+    while (t--) {
+        solve();
+    }
+
+    return 0;
+
+}
