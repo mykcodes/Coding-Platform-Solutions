@@ -56,7 +56,7 @@ Output
 **Language:** c_cpp  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-09-16T16:22:15.072Z  
+**Submitted:** 2026-09-16T16:22:51.285Z  
 
 ```c_cpp
 #include <bits/stdc++.h>
@@ -64,7 +64,7 @@ using namespace std;
 void solve() {
     int n;
     cin>>n;
-    vectorr <long long> a(n);
+    vector<long long> a(n);
     long long total_sum = 0;
     for (int i=0; i<n; i++) {
         cin>>a[i];
