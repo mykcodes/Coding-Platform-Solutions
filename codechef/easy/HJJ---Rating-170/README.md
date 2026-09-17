@@ -61,7 +61,7 @@ In the $1^{st}$ set Chef benches 20 kg, in the next it becomes 30 kg and in the 
 **Language:** c_cpp  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-08-11T05:34:21.840Z  
+**Submitted:** 2026-09-17T17:43:17.112Z  
 
 ```c_cpp
 #include <bits/stdc++.h>
