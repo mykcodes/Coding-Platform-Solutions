@@ -1,0 +1,18 @@
+#include <bits/stdc++.h>
+#include <string>
+using namespace std;
+
+
+int main() {
+	    string str;
+	    cin>>str;
+	    string temp;
+	    temp = str.substr(2,3);
+	    if (temp=="nta") {
+	        cout << "YES";
+	    }
+	    else {
+	        cout<<"NO";
+	    }
+	    
+ }
