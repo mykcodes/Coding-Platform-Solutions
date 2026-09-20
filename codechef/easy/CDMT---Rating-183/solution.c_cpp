@@ -1,0 +1,12 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+	int X,Y;
+	cin>>X>>Y;
+	(Y>X)
+	? cout << "Yes"
+	: cout << "No";
+	return 0;
+
+}
