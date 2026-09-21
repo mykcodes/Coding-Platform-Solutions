@@ -1,0 +1,11 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+    int X,Y;
+    cin>>X>>Y;
+    (X*Y>=100) 
+    ? cout<<"Yes"
+    : cout<<"No";
+    return 0;
+}
