@@ -74,18 +74,18 @@ Thus, it's impossible to make the array  *good*  after a single deletion.
 
 ## Solution
 
-**Language:** C++  
+**Language:** c_cpp  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-09-23T15:15:41.334Z  
+**Submitted:** 2026-09-23T15:16:00.384Z  
 
-```cpp
+```c_cpp
 #include <bits/stdc++.h>
 using namespace std;
 void solve() {
     int n;
 	cin>>n;
-	long long sum =0,, min_val = 1e9;
+	long long sum =0, min_val = 1e9;
 	bool deleted = false;
 	for (int i =0; i<n; i++) {
 	    long long val; cin>>val; sum+=val;
@@ -103,7 +103,7 @@ void solve() {
 }
 int main() {
 	int t;
-	cin<<t;
+	cin>>t;
 	while(t--) {
 	    solve();
 	}
