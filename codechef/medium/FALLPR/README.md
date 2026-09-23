@@ -74,12 +74,12 @@ Thus, it's impossible to make the array  *good*  after a single deletion.
 
 ## Solution
 
-**Language:** c_cpp  
+**Language:** C++  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-09-23T15:15:15.285Z  
+**Submitted:** 2026-09-23T15:15:41.334Z  
 
-```c_cpp
+```cpp
 #include <bits/stdc++.h>
 using namespace std;
 void solve() {
