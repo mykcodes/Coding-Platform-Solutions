@@ -3,7 +3,7 @@ using namespace std;
 void solve() {
     int n;
 	cin>>n;
-	long long sum =0,, min_val = 1e9;
+	long long sum =0, min_val = 1e9;
 	bool deleted = false;
 	for (int i =0; i<n; i++) {
 	    long long val; cin>>val; sum+=val;
@@ -21,7 +21,7 @@ void solve() {
 }
 int main() {
 	int t;
-	cin<<t;
+	cin>>t;
 	while(t--) {
 	    solve();
 	}
