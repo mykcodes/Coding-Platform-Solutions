@@ -55,12 +55,12 @@ Output
 
 ## Solution
 
-**Language:** C++  
+**Language:** c_cpp  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-09-24T16:59:31.085Z  
+**Submitted:** 2026-09-24T16:59:41.718Z  
 
-```cpp
+```c_cpp
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -69,7 +69,7 @@ int main() {
     cin>>N>>A>>M>>B;
     if (N*A < M*B) {
         cout<<M*B - N*A;
-    } else { cout<< N*A - M*B; }
+    } else { cout<< (N*A) - (M*B); }
     return 0;
 
 }
