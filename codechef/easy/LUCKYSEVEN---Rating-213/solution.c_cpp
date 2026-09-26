@@ -1,0 +1,11 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+	char s[10];
+	cin>>s;
+	char x=s[6];
+	cout<<x;
+	return 0;
+
+}
