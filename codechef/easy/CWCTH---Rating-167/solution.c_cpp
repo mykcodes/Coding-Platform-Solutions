@@ -1,0 +1,12 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+	int A,B;
+	cin>>A>>B;
+	B>=3*A
+	? cout << "Rain"
+	: cout << "Dry";
+	return 0; 
+
+}
