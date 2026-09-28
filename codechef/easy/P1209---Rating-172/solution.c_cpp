@@ -1,0 +1,12 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+	int R;
+	cin>>R;
+	(R<=4)
+	? cout<<"Yes"
+	: cout<<"No";
+	return 0;
+
+}
