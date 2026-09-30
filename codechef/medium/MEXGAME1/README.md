@@ -61,31 +61,40 @@ Alice
 
 ## Solution
 
-**Language:** C++  
+**Language:** c_cpp  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-09-30T15:29:21.324Z  
+**Submitted:** 2026-09-30T15:29:31.796Z  
 
-```cpp
+```c_cpp
 #include <bits/stdc++.h>
 using namespace std;
 void solve() {
     int n;
     cin>>n;
     long long sum =0, m=0;
-    vector<int>
-    freq(n+2, 0);
+    vector<long long> a(n);
+    vector<int> freq(n+2, 0);
     for (int i=0; i<n; i++) {
         cin>>a[i];
         sum += a[i];
-        if (a[i] <= n) freq[a[i]]++;
+        if (a[i] >= 0 && a[i] <=n) {freq[a[i]]++;}
     }
-    while (freq[m]) m++;
+    while (m<=n && freq[m]>0) {
+        m++;
+    }
     long long term_sum = m * (m-1)/2;
-    for (int x:a) {
-        if (x>m) term_sum += m+1;
+    for (int i=0; i<n; i++) {
+        if (a[i] > m) {
+            term_sum += (m+1);
+        }
     }
-    cout<<((sum = term_sum) % 2 ? "Alice\n" : "Bob\n");
+    long long moves = sum - term_sum;
+    if (moves % 2 != 0) {
+        cout<<"Alice\n";
+    } else {
+        cout<<"Bob\n";
+    }
 }
 int main() {
     int t;
