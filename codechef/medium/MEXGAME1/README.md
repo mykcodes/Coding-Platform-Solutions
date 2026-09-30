@@ -61,12 +61,12 @@ Alice
 
 ## Solution
 
-**Language:** c_cpp  
+**Language:** C++  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-09-30T15:22:29.841Z  
+**Submitted:** 2026-09-30T15:29:21.324Z  
 
-```c_cpp
+```cpp
 #include <bits/stdc++.h>
 using namespace std;
 void solve() {
