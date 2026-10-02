@@ -59,7 +59,7 @@ Your team drew $1$ game and lost the others, thus $1$ point.
 **Language:** c_cpp  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-08-16T16:21:04.130Z  
+**Submitted:** 2026-10-02T04:29:56.271Z  
 
 ```c_cpp
 #include <bits/stdc++.h>
