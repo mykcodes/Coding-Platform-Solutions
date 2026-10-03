@@ -88,7 +88,7 @@ Since Alice has more number of water balloons that Bob, Alice wins.
 **Language:** c_cpp  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-08-16T17:01:38.398Z  
+**Submitted:** 2026-10-03T18:42:25.599Z  
 
 ```c_cpp
 #include <bits/stdc++.h>
