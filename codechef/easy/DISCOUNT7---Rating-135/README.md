@@ -61,7 +61,7 @@ Since you bought $5$ cakes, the discount is applied and each cake costs only $85
 **Language:** c_cpp  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-08-16T16:28:54.661Z  
+**Submitted:** 2026-10-07T05:37:51.365Z  
 
 ```c_cpp
 #include <bits/stdc++.h>
