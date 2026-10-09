@@ -61,7 +61,7 @@ Chef will have $125$ rupees, and he can buy $2$ popcorn buckets for $100$ rupees
 **Language:** c_cpp  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-08-08T17:06:42.438Z  
+**Submitted:** 2026-10-09T16:39:31.628Z  
 
 ```c_cpp
 #include <bits/stdc++.h>
