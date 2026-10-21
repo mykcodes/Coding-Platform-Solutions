@@ -54,12 +54,12 @@ Test case $4$: Since the final score is $0$, all questions can be skipped.
 
 ## Solution
 
-**Language:** c_cpp  
+**Language:** C++  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-10-21T16:23:50.804Z  
+**Submitted:** 2026-10-21T16:23:54.801Z  
 
-```c_cpp
+```cpp
 #include <bits/stdc++.h>
 using namespace std;
 
