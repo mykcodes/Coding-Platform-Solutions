@@ -61,7 +61,7 @@ Chef needs $400$ rupees to buy all the ingredients, and then sells it for $100$ 
 **Language:** c_cpp  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-08-08T17:07:18.218Z  
+**Submitted:** 2026-10-25T18:09:38.530Z  
 
 ```c_cpp
 #include <bits/stdc++.h>
