@@ -1,0 +1,1 @@
+// Solution for P1149 on CodeChef
