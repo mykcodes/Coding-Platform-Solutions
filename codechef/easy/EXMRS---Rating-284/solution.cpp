@@ -2,8 +2,8 @@
 using namespace std;
 
 int main() {
-	int c,w,m,p,r;
-	cin>>c>>w>>m>>p>>r;
+	int c,m,w,p,r;
+	cin>>c>>m>>w>>p>>r;
 	int a = c*m - w*p;
 	if (a>r) {
 	    cout<<"Yes\n";
