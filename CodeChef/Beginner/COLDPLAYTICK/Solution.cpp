@@ -1,0 +1,1 @@
+// Solution for COLDPLAYTICK on CodeChef
