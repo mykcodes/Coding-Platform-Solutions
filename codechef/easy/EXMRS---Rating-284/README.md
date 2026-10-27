@@ -59,15 +59,15 @@ Chef earns no marks and loses $5 \times 2=10$ marks. His final score is $-10$, w
 **Language:** C++  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-10-27T17:20:37.445Z  
+**Submitted:** 2026-10-27T17:21:37.246Z  
 
 ```cpp
 #include <bits/stdc++.h>
 using namespace std;
 
 int main() {
-	int c,w,m,p,r;
-	cin>>c>>w>>m>>p>>r;
+	int c,m,w,p,r;
+	cin>>c>>m>>w>>p>>r;
 	int a = c*m - w*p;
 	if (a>r) {
 	    cout<<"Yes\n";
