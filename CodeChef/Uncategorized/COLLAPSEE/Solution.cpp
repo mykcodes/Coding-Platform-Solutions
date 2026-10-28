@@ -1,0 +1,1 @@
+// Solution for COLLAPSEE on CodeChef
