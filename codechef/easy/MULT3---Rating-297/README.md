@@ -83,14 +83,22 @@ $9$ is itself a multiple of $3$.
 **Language:** C++  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-10-28T14:12:56.715Z  
+**Submitted:** 2026-10-28T14:14:51.663Z  
 
 ```cpp
 #include <bits/stdc++.h>
 using namespace std;
 
 int main() {
-    
+    int n;
+    cin>>n;
+    if (n%3==0) {
+        cout<<n;
+    } else if (n+1 % 3==0) {
+        cout<<n+1;
+    } else if (n-1 % 3==0) {
+        cout<<n-1;
+    }
 
 }
 
