@@ -1,0 +1,1 @@
+// Solution for MULT3 on CodeChef
