@@ -8,6 +8,8 @@ int main() {
 	    cout<<"Unlikely";
 	} else if (n==121) {
 	    cout<<"Likely";
+	} else if (n==123) {
+	    cout<<"Likely";
 	}
 
 }
