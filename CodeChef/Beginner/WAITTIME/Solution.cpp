@@ -1,0 +1,1 @@
+// Solution for WAITTIME on CodeChef
