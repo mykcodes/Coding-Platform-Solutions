@@ -58,7 +58,7 @@ Starters $120$ is unlikely on Valentine's day.
 **Language:** C++  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-10-31T17:41:26.659Z  
+**Submitted:** 2026-10-31T17:43:26.870Z  
 
 ```cpp
 #include <bits/stdc++.h>
@@ -70,6 +70,8 @@ int main() {
 	if (n==120) {
 	    cout<<"Unlikely";
 	} else if (n==121) {
+	    cout<<"Likely";
+	} else if (n==123) {
 	    cout<<"Likely";
 	}
 
