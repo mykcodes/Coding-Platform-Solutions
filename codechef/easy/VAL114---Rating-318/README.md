@@ -55,12 +55,12 @@ Starters $120$ is unlikely on Valentine's day.
 
 ## Solution
 
-**Language:** C++  
+**Language:** c_cpp  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-10-31T17:43:26.870Z  
+**Submitted:** 2026-10-31T17:44:04.956Z  
 
-```cpp
+```c_cpp
 #include <bits/stdc++.h>
 using namespace std;
 
