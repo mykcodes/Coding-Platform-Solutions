@@ -70,12 +70,12 @@ So, a penalty session will be carried out.
 
 ## Solution
 
-**Language:** C++  
+**Language:** c_cpp  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-11-01T10:31:18.049Z  
+**Submitted:** 2026-11-01T10:31:36.787Z  
 
-```cpp
+```c_cpp
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -83,7 +83,7 @@ int main() {
 	int a,b;
 	cin>>a,b;
 	if (a>b){
-	    cout<<"FREEKICK\n";
+	    cout<<"FREEKICK";
 	} else {
 	    cout<<"PENALTY";
 	}
