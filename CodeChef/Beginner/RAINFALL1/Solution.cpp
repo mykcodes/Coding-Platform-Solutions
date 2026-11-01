@@ -1,0 +1,1 @@
+// Solution for RAINFALL1 on CodeChef
