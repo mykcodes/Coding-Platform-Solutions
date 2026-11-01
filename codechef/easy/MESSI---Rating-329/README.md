@@ -73,7 +73,7 @@ So, a penalty session will be carried out.
 **Language:** c_cpp  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-11-01T10:31:36.787Z  
+**Submitted:** 2026-11-01T10:31:47.973Z  
 
 ```c_cpp
 #include <bits/stdc++.h>
