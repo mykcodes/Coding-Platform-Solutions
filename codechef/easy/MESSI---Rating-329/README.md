@@ -70,12 +70,12 @@ So, a penalty session will be carried out.
 
 ## Solution
 
-**Language:** c_cpp  
+**Language:** C++  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-11-01T10:31:47.973Z  
+**Submitted:** 2026-11-01T10:31:52.616Z  
 
-```c_cpp
+```cpp
 #include <bits/stdc++.h>
 using namespace std;
 
