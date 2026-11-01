@@ -5,7 +5,7 @@ int main() {
 	int a,b;
 	cin>>a,b;
 	if (a>b){
-	    cout<<"FREEKICK\n";
+	    cout<<"FREEKICK";
 	} else {
 	    cout<<"PENALTY";
 	}
