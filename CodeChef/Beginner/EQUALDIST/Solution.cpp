@@ -1,0 +1,1 @@
+// Solution for EQUALDIST on CodeChef
