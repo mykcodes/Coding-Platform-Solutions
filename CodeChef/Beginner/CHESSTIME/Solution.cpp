@@ -1,0 +1,1 @@
+// Solution for CHESSTIME on CodeChef
