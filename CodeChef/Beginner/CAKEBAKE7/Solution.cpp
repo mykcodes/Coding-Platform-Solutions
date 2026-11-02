@@ -1,0 +1,1 @@
+// Solution for CAKEBAKE7 on CodeChef
