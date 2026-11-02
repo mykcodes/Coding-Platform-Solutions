@@ -61,7 +61,7 @@ Chef can let customers $1$ and $2$ buy $2$ cakes, and customers $3$ and $4$ buy 
 **Language:** C++  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-11-02T04:52:55.930Z  
+**Submitted:** 2026-11-02T05:02:40.075Z  
 
 ```cpp
 #include <bits/stdc++.h>
