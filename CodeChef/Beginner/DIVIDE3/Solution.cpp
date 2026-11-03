@@ -1,0 +1,1 @@
+// Solution for DIVIDE3 on CodeChef
