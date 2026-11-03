@@ -1,0 +1,1 @@
+// Solution for COUGAME on CodeChef
