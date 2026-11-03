@@ -93,12 +93,12 @@ The AQI is greater than $100$. Thus, the government was not able to keep the AQI
 
 ## Solution
 
-**Language:** c_cpp  
+**Language:** C++  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-11-03T14:10:53.500Z  
+**Submitted:** 2026-11-03T14:11:11.072Z  
 
-```c_cpp
+```cpp
 #include <bits/stdc++.h>
 
 using namespace std;
