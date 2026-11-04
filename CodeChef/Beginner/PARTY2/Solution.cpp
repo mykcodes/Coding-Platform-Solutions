@@ -1,0 +1,1 @@
+// Solution for PARTY2 on CodeChef
