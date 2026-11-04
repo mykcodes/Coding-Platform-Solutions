@@ -1,0 +1,1 @@
+// Solution for WECNITK on CodeChef
