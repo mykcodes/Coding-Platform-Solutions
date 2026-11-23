@@ -1,10 +1,10 @@
 {
   "code": "class Solution {\npublic:\n    int maxSubArray(vector<int>& nums) {\n        int currSum = 0; \n        int maxSum = INT_MIN;\n        int n=size(nums);\n        for (int i=0; i<n; i++) {\n            currSum += nums[i];\n            maxSum = max(currSum, maxSum);\n            if (currSum<0) {\n                currSum =0;\n            } \n        }\n        return maxSum;\n    }\n};",
   "difficulty": "Medium",
-  "language": "c++",
+  "language": "unknown",
   "platform": "LeetCode",
   "problemName": "Maximum Subarray",
   "problemNumber": "53",
-  "submissionDate": "2026-11-23T08:33:25.119Z",
-  "submissionUrl": "https://leetcode.com/problems/maximum-subarray/submissions/2201786040/"
+  "submissionDate": "2026-11-23T08:35:15.782Z",
+  "submissionUrl": "https://leetcode.com/problems/merge-two-sorted-lists/description/"
 }
