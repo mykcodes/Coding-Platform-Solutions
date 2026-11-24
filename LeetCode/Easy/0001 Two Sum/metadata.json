@@ -1,0 +1,10 @@
+{
+  "code": "class Solution {\npublic:\n    vector<int> twoSum(vector<int>& nums, int target) {\n        vector<int> ans;\n        for (int i = 0; i<size(nums); i++) {\n            for (int j=i+1; j<size(nums) ; j++) {\n                if (nums[i]  + nums[j] == target) {\n                    ans.push_back(i);\n                    ans.push_back(j);\n                    return ans;\n                }\n            } \n        }\n        return ans;\n    }\n};",
+  "difficulty": "Easy",
+  "language": "c++",
+  "platform": "LeetCode",
+  "problemName": "Two Sum",
+  "problemNumber": "1",
+  "submissionDate": "2026-11-24T05:17:11.792Z",
+  "submissionUrl": "https://leetcode.com/problems/two-sum/submissions/2202343310/"
+}
